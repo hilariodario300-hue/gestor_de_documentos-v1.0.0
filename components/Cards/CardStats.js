@@ -2,35 +2,32 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export default function CardStats({
-  statSubtitle = "Total de Documentos",
-  statTitle = "0",
-  statArrow = "up",
-  statPercent = "0",
-  statPercentColor = "text-emerald-500",
-  statDescription = "Registrados este mês",
-  statIconName = "fas fa-folder-open",
-  statIconColor = "bg-lightBlue-500",
+  statSubtitle,
+  statTitle,
+  statArrow,
+  statPercent,
+  statPercentColor,
+  statDescripiron,
+  statIconName,
+  statIconColor,
 }) {
   return (
     <>
-      <div className="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg border border-blueGray-100">
+      <div className="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
         <div className="flex-auto p-4">
           <div className="flex flex-wrap">
             <div className="relative w-full pr-4 max-w-full flex-grow flex-1">
-              {/* Categoria do Documento / Estatística */}
-              <h5 className="text-blueGray-400 uppercase font-bold text-xs tracking-wider">
+              <h5 className="text-blueGray-400 uppercase font-bold text-xs">
                 {statSubtitle}
               </h5>
-              {/* Quantidade Principal */}
               <span className="font-semibold text-xl text-blueGray-700">
                 {statTitle}
               </span>
             </div>
             <div className="relative w-auto pl-4 flex-initial">
-              {/* Ícone Acadêmico/Gestão */}
               <div
                 className={
-                  "text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-md rounded-full " +
+                  "text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full " +
                   statIconColor
                 }
               >
@@ -51,7 +48,7 @@ export default function CardStats({
               ></i>{" "}
               {statPercent}%
             </span>
-            <span className="whitespace-nowrap">{statDescription}</span>
+            <span className="whitespace-nowrap">{statDescripiron}</span>
           </p>
         </div>
       </div>
@@ -59,19 +56,28 @@ export default function CardStats({
   );
 }
 
-// Exemplos de ícones úteis para sua Instituição de Ensino em 2025:
-// Diplomas: "fas fa-graduation-cap" (bg-orange-500)
-// Matrículas: "fas fa-user-graduate" (bg-pink-500)
-// Arquivos PDF: "fas fa-file-pdf" (bg-red-500)
-// Certificados: "fas fa-certificate" (bg-emerald-500)
+CardStats.defaultProps = {
+  statSubtitle: "Traffic",
+  statTitle: "350,897",
+  statArrow: "up",
+  statPercent: "3.48",
+  statPercentColor: "text-emerald-500",
+  statDescripiron: "Since last month",
+  statIconName: "far fa-chart-bar",
+  statIconColor: "bg-red-500",
+};
 
 CardStats.propTypes = {
   statSubtitle: PropTypes.string,
   statTitle: PropTypes.string,
   statArrow: PropTypes.oneOf(["up", "down"]),
   statPercent: PropTypes.string,
+  // can be any of the text color utilities
+  // from tailwindcss
   statPercentColor: PropTypes.string,
-  statDescription: PropTypes.string,
+  statDescripiron: PropTypes.string,
   statIconName: PropTypes.string,
+  // can be any of the background color utilities
+  // from tailwindcss
   statIconColor: PropTypes.string,
 };
