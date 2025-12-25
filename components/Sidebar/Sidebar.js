@@ -69,8 +69,8 @@ export default function Sidebar() {
             </li>
 
             <li>
-              <Link href="/admin/setores" className={`text-xs uppercase py-3 font-bold block ${activeLink("/admin/setores")}`}>
-                <i className={`fas fa-building mr-2 ${activeIcon("/admin/setores")}`}></i>
+              <Link href="/admin/departamentos" className={`text-xs uppercase py-3 font-bold block ${activeLink("/admin/departamentos")}`}>
+                <i className={`fas fa-building mr-2 ${activeIcon("/admin/departamentos")}`}></i>
                 Setores
               </Link>
             </li>
