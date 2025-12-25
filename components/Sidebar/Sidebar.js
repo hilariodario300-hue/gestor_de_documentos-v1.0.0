@@ -16,7 +16,7 @@ export default function Sidebar() {
 
   const activeIcon = (path) =>
     router.pathname.indexOf(path) !== -1
-      ? "opacity-75"
+      ? "opacity-75" 
       : "text-blueGray-300";
 
   return (
