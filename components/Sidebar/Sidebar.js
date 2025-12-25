@@ -62,7 +62,7 @@ export default function Sidebar() {
             </li>
 
             <li>
-              <Link href="/admin/usuarios" className={`text-xs uppercase py-3 font-bold block ${activeLink("/admin/usuarios")}`}>
+              <Link href="/admin/usuarios.js" className={`text-xs uppercase py-3 font-bold block ${activeLink("/admin/usuarios")}`}>
                 <i className={`fas fa-users mr-2 ${activeIcon("/admin/usuarios")}`}></i>
                 Usuários
               </Link>
